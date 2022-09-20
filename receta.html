@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>SOPAIPILLAS | MGCOCINA</title> <!-- MIGUEL CHAMORRO 4C -->
+        <style>
+            /* Fonts (Google Fonts) */
+
+            @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap'); /* Dosis */
+            @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap'); /* Alfa Slab One */
+            @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap'); /* Ubuntu */
+            @import url('https://fonts.googleapis.com/css2?family=Square+Peg&display=swap'); /* Square Peg */
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* Bebas Neue */
+            @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap'); /* Lobster */
+
+
+            body {
+                margin: 0px;
+            }
+            #mainPrincipal {
+                width: 75%;
+                border: 2px solid white;
+            }
+            #aside1 {
+                width: 25%;
+                height: auto;
+            }
+            #aside1 table {
+                margin: 0 auto;
+            }
+            #unionMainAside {
+                display: flex;
+                flex-direction: row;
+            }
+            #navTop {
+                background-color: #5f64e8;
+                border-bottom: 1px solid white;
+            }
+            #navTop ul {
+                width: 50%; 
+                margin: 0 auto;
+            }
+            #navTop ul li {
+                display: inline-block;
+                width: 100px;
+                opacity: 0.75;
+                transition: 2s;
+            }
+            #navTop ul li:hover {
+                transition: 1s;
+                width: 200px;
+                opacity: 1;
+            }
+            #navTop ul li:hover a p {
+                font-weight:bolder;
+            }
+            #navTop ul li a hr {
+                opacity: 0;
+                width: 0;
+                transition: 2s;
+                color: white;
+            }
+            #navTop ul li:hover a hr {
+                opacity: 1;
+                transition: 1s;
+                width: 80%;
+            }
+            #navTop ul li p {
+                font-family: 'Dosis', Verdana;
+                text-align: center;
+                color: white;
+                font-size: 20px;
+            }
+            #navTop ul li a {
+                text-decoration: none;
+            }
+            #navTop ul li a hr {
+                margin-top: -15px;
+                opacity: 0;
+            }
+            #asideTable {
+                width: 90%;
+                margin-top: 20px;
+            }
+            #asideTable p {
+                margin-left: 15px;
+                font-weight: bold;
+            }
+            #aside1 h1 {
+                text-align: center;
+            }
+            #Rightside {
+                text-align: right;
+                margin-right: 15px;
+                margin-left: 0px;
+                font-weight: 100 !important;
+            }
+            #headerTitle1 h1 {
+                font-family: 'Lobster', fantasy;
+                font-size: 48px;
+                font-weight: 100;
+            }
+            #footerPrincipal {
+                background-color: #5f64e8;
+            }
+            #footerPrincipalAuthor {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 20px 0px 20px 0px;
+            }
+            #footerPrincipalAuthor p {
+                font-family: 'Ubuntu', cursive;
+                text-transform: uppercase;
+                color: white;
+                font-size: 24px;
+            }
+            #footerPrincipalAuthor a img {
+                border-radius: 50%;
+                border: 2px solid black;
+                width: 75px;
+                height: auto;
+                margin-left: 50px;
+            }
+            #footerPrincipal {
+                padding: 20px 0px 0px 0px;
+                border-top: 2px solid white;
+            }
+            #footerPrincipal hr {
+                width: 80%;
+            }
+            #footerPrincipal ul li a p {
+                text-align: center;
+                font-family: 'Dosis', verdana;
+                color: white;
+                transition: 2s;
+                padding-top: 10px;
+            }
+            #footerPrincipal ul li a p:hover {
+                transition: 1s;
+                font-size: 25px;
+            }
+            #footerPrincipal ul li a {
+                text-decoration: none;
+            }
+            #footerPrincipal ul {
+                list-style: none;
+            }
+            #headerTitle1 {
+                background: linear-gradient(to bottom right, #4e53e9, #7a7de9);
+                border: 1px solid transparent;
+            }
+            #headerTitle1 h1 {
+                margin-top: 10px;
+                font-size: 72px;
+                text-align: center;
+                color: #ffffff;
+                width: 80%;
+            }
+            #headerTitle1 h2 {
+                font-size: 36px;
+                font-family: 'Square Peg', cursive;
+                text-align: center;
+                width: 80%;
+                color: white;
+                margin-top: -55px;
+                font-weight: 100;
+                margin-bottom: 10px;
+            }
+            #aside1 {
+                background: linear-gradient(to top left, #4e53e9, #7a7de9);
+                border: 2px solid white;
+                border-top: 0px solid white;
+            }
+
+            /* MAIN CSS */
+            #floatdivMainImg {
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                border: 2px inset white;
+                display: flex;
+                flex-direction: row;
+
+            }
+            #divMainImg {
+                width: 25%;
+                height: auto;
+                overflow: hidden;
+            }
+            #divMainImg img {
+                width: 100%;
+                height: 100%;
+                transition: 2s;
+            }
+            #divMainImg:hover img {
+                transition: 1s;
+                transform: scale(1.025);
+            }
+            #divMainImg:hover {
+                transition: 1s;
+            }
+            #mainPrincipal {
+                background: linear-gradient(to bottom right, #7a7de9, #dadbff);
+            }
+            #sectionIngredientes {
+                display: flex;
+                flex-direction: row;
+                background: linear-gradient(to bottom right, #7a7de9, #5b5ec9);
+                width: 80%;
+                margin: 0 auto;
+                margin-top: 50px;
+                border-radius: 20px;
+                border: 2px solid white;
+                padding: 30px 30px 30px 10px;
+            }
+            #h2div {
+                display: flex;
+                flex-direction: column-reverse;
+                margin-top: 20px;
+            }
+            #h2div h2 {
+                margin: 0px 0px -1px 10px;
+                text-align: center;
+                transform: rotate(-90deg);
+                font-family: 'Ubuntu';
+                color: white;
+            }
+            #sectionIngredientes ul {
+                margin-top: 50px;
+            }
+            #sectionIngredientes ul li {
+                line-height: 2.0;
+                color: white;
+                font-size: 28px;
+                transition: 2s;
+            }
+            #sectionIngredientes ul li:hover {
+                font-size: 36px;
+                transition: 1s;
+            }
+            #sectionInfo ul li {
+                display: inline-block;
+                font-family: 'Verdana';
+            }
+            #sectionInfo {
+                margin: 0 auto;
+                width: 75%;
+            }
+            #sectionInfo span {
+                font-weight: bold;
+            }
+            #aside1 h1 {
+                font-family: 'Lobster', cursive;
+                color: white;
+                font-weight: 100;
+            }
+            #asideTable td {
+                border-top: 1px solid white;
+                border-bottom: 1px solid white;
+                transition: 2s;
+                font-family: 'Ubuntu', Arial;
+            }
+            #asideTable td:hover {
+                transition: 1s;
+                padding: 5px 0px 5px 0px;
+            }
+            #asideTable tr:hover {
+                color: white;
+            }
+            #sectionProc h1 {
+                font-family: 'Lobster', fantasy;
+                color: white;
+                text-align: center;
+                font-size: 76px;
+                font-weight: 100;
+                margin: 0;
+            }
+            .sectionProcPasos {
+                padding: 10px 50px 10px 50px;
+            }
+            #alertYoutube {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                font-size: 20px;
+                font-family: 'Ubuntu', verdana;
+                color: white;
+                padding-bottom: 20px;
+            }
+            #alertYoutube p {
+                background: linear-gradient(to bottom right, red, rgb(252, 105, 105));
+                margin: 0;
+                padding: 20px 0px 5px 10px;
+                width: 35%;
+                border-radius: 0px 50px 50px 0px;
+                -webkit-box-shadow: -2px 4px 9px 0px #000000; 
+                box-shadow: -2px 4px 9px 0px #000000;
+                z-index: 2;
+                position: relative;
+                right: 50%;
+                animation-name: Animation;
+                animation-timing-function: ease-out;
+                animation-iteration-count: infinite;
+                animation-duration: 20s;
+            }
+            #alertYoutube a {
+                background: linear-gradient(to top right, red, rgb(252, 105, 105));
+                padding: 0px 0px 20px 10px;
+                width: 28%;
+                border-radius: 0px 0px 50px 0px;
+                z-index: 1;
+                position: relative;
+                right: 50%;
+                animation-name: Animation;
+                animation-timing-function: ease-out;
+                animation-iteration-count: infinite;
+                animation-duration: 20s;
+            }
+            @keyframes Animation {
+                0% {
+                    right: 50%;
+                }
+                20% {
+                    right: 0%;
+                }
+                80% {
+                    right: 0%;
+                }
+                100% {
+                    right: 50%;
+                }
+            }
+            #sectionVideo {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding-bottom: 20px;
+            }
+            #sectionVideo video {
+                border-radius: 20px;
+                border: 2px solid white;
+            }
+            #liFont li {
+                font-family: 'Ubuntu', cursive;
+            }
+            .sectionProcPasos hr {
+                border: 2px solid white;
+                border-radius: 50%;
+                width: 0%;
+                transition: 1s;
+            }
+            .sectionProcPasos h2 {
+                padding: 0px 20px 0px 20px;
+                font-family: 'Alfa Slab One', fantasy;
+                font-weight: 100;
+                opacity: 50%;
+                color: white;
+            }
+            .sectionProcPasos p {
+                padding: 0px 50px 0px 50px;
+                opacity: 75%;
+                color: white;
+            }
+            .sectionProcPasos:hover h2 {
+                opacity: 1;
+            }
+            .sectionProcPasos:hover p {
+                opacity: 1;
+            }
+            .sectionProcPasos:hover hr {
+                transition: 2s;
+                width: 80%;
+            }
+        </style>
+    </head>
+    <body>
+        <nav id="navTop">
+            <ul>
+                <li><a href="#headerTitle1"><p>INICIO</p><hr></a></li>
+                <li><a href="#divMainImg"><p>INGRED.</p><hr></a></li>
+                <li><a href="#gotoproc"><p>PROCESO</p><hr></a></li>
+                <li><a href="#divMainImg"><p>NUTRICIÓN</p><hr></a></li>
+            </ul>
+        </nav>
+        <header id="headerTitle1">
+            <h1>RECETA SOPAIPILLAS</h1>
+            <h2>Disfruta de unas ricas sopaipillas hechas en la comodidad de tu casa.</h2>
+        </header>
+        <div id="unionMainAside"> <!-- No me alinear el aside con el inlineblock :( -->
+            <main id="mainPrincipal">
+                <article>
+                    <div id="floatdivMainImg">
+                        <div id="divMainImg">
+                            <img src="resources/sopaipilla1.jpg" alt="Sopaipillas">
+                        </div>
+                        <div id="divMainImg">
+                            <img src="resources/sopaipilla2.webp" alt="Sopaipillas">
+                        </div>
+                        <div id="divMainImg">
+                            <img src="resources/sopaipilla3.jpg" alt="Sopaipillas">
+                        </div>
+                        <div id="divMainImg">
+                            <img src="resources/sopaipilla4.jpg" alt="Sopaipillas">
+                        </div>
+                    </div>
+                    <section id="sectionIngredientes">
+                        <div id="h2div">
+                            <h2>I</h2>
+                            <h2>N</h2>
+                            <h2>G</h2>
+                            <h2>R</h2>
+                            <h2>E</h2>
+                            <h2>D</h2>
+                            <h2>I</h2>
+                            <h2>E</h2>
+                            <h2>N</h2>
+                            <h2>T</h2>
+                            <h2>E</h2>
+                            <h2>S</h2>
+                        </div>
+                        <ul id="liFont">
+                            <li>2 Tazas de harina <span>sin polvos de hornear.</span></li>
+                            <li>1 Taza de zapallo molido.</li>
+                            <li>2 Cucharadas de manteca.</li>
+                            <li>½ Cucharada de sal.</li>
+                            <li>Aceite para freir.</li>
+                        </ul>
+                    </section>
+                    <div id="sectionInfo">
+                        <ul>
+                            <li>Tiempo estimado: <span>90 minutos.</span></li>
+                            <li>Dificultad: <span>Media.</span></li>
+                            <li>Unidades aprox: <span>15 unidades.</span></li>
+                        </ul>
+                    </div>
+                    <section id="sectionProc">
+                        <div class="sectionProcPasos">
+                            <hr id="gotoproc">
+                            <h1>PROCEDIMIENTO</h1>
+                            <hr>
+                            <h2>Paso 1:</h2>
+                            <p>En un bol mezcla todos los ingredientes hasta tener una masa suave y homogénea.</p>
+                            <hr>
+                        </div>
+                        <div class="sectionProcPasos">
+                            <hr>
+                            <h2>Paso 2:</h2>
+                            <p>Espolvorea un poco de harina sobre el mesón y estira la masa con ayuda de un uslero.</p>
+                            <hr>
+                        </div>
+                        <div class="sectionProcPasos">
+                            <hr>
+                            <h2>Paso 3:</h2>
+                            <p>Cuando haya alcanzado los 3mm de grosor aprox. corta las sopaipillas en una forma circular de 6cm
+                                aproximadamente
+                                y pinchalas en el centro con un tenedor.
+                            </p>
+                            <hr>
+                        </div>
+                        <div class="sectionProcPasos">
+                            <hr>
+                            <h2>Paso 4:</h2>
+                            <p>Caliente el aceite en una sartén y fría las sopaipillas por alrededor de 3 minutos cada una, Seguido 
+                                de esto retirelas
+                                con una espumadera y déjelas reposar sobre una fuente con papel absorbente.
+                            </p>
+                            <hr>
+                        </div>
+                    </section>
+                    <section>
+                        <div id="sectionVideo">
+                            <video src="resources/sopaipillasvideo.mp4" controls="controls"></video>
+                        </div>
+                        <div id="alertYoutube">
+                            <p>¿Problemas con la visualización del video?</p><a target="_blank" href="https://www.youtube.com/watch?v=py-0rMUwgAs&ab_channel=JumboChile">Veelo a través de YouTube.<span id="spanYoutube"></span></a>
+                        </div>
+                    </section>
+                </article>
+            </main>
+            <aside id="aside1">
+                <h1>TABLA<br>NUTRICIONAL</h1>
+                <table id="asideTable">
+                    <tr>
+                        <td><p>Tamaño de la porción</p></td>
+                        <td><p id="Rightside">100 g</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Energía</p></td>
+                        <td><p id="Rightside">1506 kj</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p id="Rightside">360 kcal</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Proteína</p></td>
+                        <td><p id="Rightside">5,4g</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Grasa</p></td>
+                        <td><p id="Rightside">19.59g</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Carbohidratos</p></td>
+                        <td><p id="Rightside">40,26 g</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Sodio</p></td>
+                        <td><p id="Rightside">883mg</p></td>
+                    </tr>
+                    <tr>
+                        <td><p>Potasio</p></td>
+                        <td><p id="Rightside">56mg</p></td>
+                    </tr>
+                </table>
+            </aside>
+        </div>
+        <footer id="footerPrincipal">
+            <ul>
+                <li><a href="#headerTitle1"><p>INICIO</p></a></li>
+                <li><a href="#divMainImg"><p>INGREDIENTES</p></a></li>
+                <li><a href="#gotoproc"><p>PROCEDIMIENTO</p></a></li>
+                <li><a href="#divMainImg"><P>INFO NUTRICIONAL</P></a></li>
+            </ul>
+            <hr>
+            <div id="footerPrincipalAuthor">
+                <p>Miguelito Cocina</p>
+                <a href="https://liceoandes.duoc.cl/" target="_blank"><img src="resources/logo-lpa.jpg" alt="Liceo Politécnico Andes"></a>
+            </div>
+        </footer>
+    </body>
+</html>
